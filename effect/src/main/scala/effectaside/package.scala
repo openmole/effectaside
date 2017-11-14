@@ -56,6 +56,10 @@ package object effectaside {
     @inline def apply() = f
   }
 
+  object System {
+    def apply() = Effect(new System)
+  }
+
   class System {
     def randomUUID() = java.util.UUID.randomUUID()
     def sleep(d: squants.Time) = Thread.sleep(d.millis)

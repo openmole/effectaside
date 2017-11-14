@@ -1,8 +1,9 @@
 
 import sbtrelease.ReleasePlugin.autoImport.ReleaseTransformations._
 
-scalaVersion in ThisBuild := "2.12.3"
-crossScalaVersions in ThisBuild := Seq("2.11.11", "2.12.3")
+name := "effectaside"
+scalaVersion in ThisBuild := "2.12.4"
+crossScalaVersions in ThisBuild := Seq("2.11.11", "2.12.4")
 scalacOptions in ThisBuild += "-Ypartial-unification"
 organization in ThisBuild := "fr.iscpif.effectaside"
 
@@ -12,6 +13,7 @@ publishTo in ThisBuild := {
   if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
   else Some("releases"  at nexus + "service/local/staging/deploy/maven2")
 }
+
 publishMavenStyle in ThisBuild := true
 publishArtifact in Test in ThisBuild := false
 pomIncludeRepository in ThisBuild := { _ => false }
